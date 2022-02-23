@@ -35,18 +35,6 @@ def scrape_price():
     return array
 
 
-# def modify_g_sheet(price):
-#     gc = pygsheets.authorize(service_file='client_secret.json')
-#     keys = list(price.keys())
-#     values = list(price.values())
-#     df = pd.DataFrame(values)
-#     sh = gc.open('CryptoPriceTracker')
-#     wks = sh[0]
-#     df = df.transpose()
-#     df.columns = keys
-#     wks.set_dataframe(df, (1, 1))
-#     return
-
 def modify_g_sheet(price):
     gc = gspread.service_account('client_secret.json')
     sh = gc.open('CryptoPriceTracker')
